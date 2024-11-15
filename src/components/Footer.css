@@ -1,0 +1,78 @@
+.footer {
+  background-color: #f7f7f7;
+  color: #333;
+  border-top: 1px solid #ddd;
+  padding: 20px 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Top Row: Links & Social Media */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Links Section */
+.links-section {
+  display: flex;
+  gap: 15px; /* Space between links */
+}
+
+.links-section button {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1em;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+.links-section button:hover {
+  color: #007bff; /* Subtle hover effect */
+  text-decoration: underline;
+}
+
+/* Social Media Icons */
+.social-section {
+  display: flex;
+  gap: 15px; /* Space between icons */
+}
+
+.social-section a {
+  font-size: 1.5em;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-section a:hover {
+  color: #007bff;
+  transform: scale(1.1); /* Subtle hover effect */
+}
+
+/* Bottom Row: Centered Text */
+.footer-bottom {
+  text-align: center;
+  font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Add spacing between sections */
+  }
+
+  .links-section, .social-section {
+    justify-content: center;
+  }
+}

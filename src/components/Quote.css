@@ -1,0 +1,19 @@
+/* Quote.css */
+.quote-container {
+    background-color: #FFDDD2; /* Soft peach for a gentle background */
+    color: #4A4A4A; /* Soft dark gray for text */
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .quote-text {
+    font-size: 18px;
+    font-style: italic;
+  }
+  .quote {
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+  }

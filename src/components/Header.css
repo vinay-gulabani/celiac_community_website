@@ -1,0 +1,93 @@
+/* Header Container */
+.header {
+  display: flex;
+  justify-content: space-between; /* Ensures the title and nav bar are on the same line */
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f7f7f7; /* Light gray as before */
+  color: #333; /* Dark text for contrast */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styling */
+.app-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Spacing between nav links */
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+/* Navigation Buttons */
+.nav-links button {
+  background: none;
+  border: none;
+  color: #333; /* Dark text color */
+  font-size: 1em;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.nav-links button:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Subtle hover effect */
+}
+
+/* Hamburger Button (hidden on larger screens) */
+.nav-button {
+  display: none;
+  background: none;
+  border: none;
+  color: #333; /* Same as text color */
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  /* Hide nav links by default on smaller screens */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.show {
+    display: flex; /* Show links when menu is toggled */
+  }
+
+  .nav-links button {
+    margin: 5px 0;
+  }
+
+  .nav-button {
+    display: block; /* Show hamburger button on mobile */
+  }
+}
