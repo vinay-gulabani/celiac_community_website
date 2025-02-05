@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">celiac_community_website</string>
+    <string name="title_activity_main">celiac_community_website</string>
+    <string name="package_name">com.celiac.community.app</string>
+    <string name="custom_url_scheme">com.celiac.community.app</string>
+</resources>

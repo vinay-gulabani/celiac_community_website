@@ -8,9 +8,9 @@ function Footer() {
       {/* Top Row */}
       <div className="footer-top">
         <div className="footer-section links-section">
-          <button onClick={() => window.location.href = "/contact"}>Contact</button>
-          <button onClick={() => window.location.href = "/privacy"}>Privacy Policy</button>
-          <button onClick={() => window.location.href = "/terms"}>Terms of Service</button>
+          <button className='footer-section-button' onClick={() => window.location.href = "/contact"}>Contact</button>
+          <button className='footer-section-button' onClick={() => window.location.href = "/privacy"}>Privacy Policy</button>
+          <button className='footer-section-button' onClick={() => window.location.href = "/terms"}>Terms of Service</button>
         </div>
 
         <div className="footer-section social-section">

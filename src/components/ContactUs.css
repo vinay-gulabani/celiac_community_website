@@ -1,0 +1,164 @@
+/* Page Wrapper */
+.contact-us-page {
+  font-family: 'Arial', sans-serif;
+  color: #000;
+  background-color: #f9f9f9;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+
+}
+
+/* Header */
+.contact-header {
+  width: 50%;
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+}
+
+.contact-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Form Container */
+.contact-us {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Intro Text */
+.contact-us p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Styling */
+.contact-form input,
+.contact-form textarea {
+  width: 90%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #f7f7f7;
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 150px;
+}
+
+/* Button Styling */
+.contact-form button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #444;
+}
+
+/* Success Message */
+.success-message {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: green;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-us {
+    padding: 15px;
+  }
+
+  .contact-form button {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+/* Dark Mode Styles for Contact Us Page */
+.dark-mode .contact-us-page {
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text */
+}
+
+.dark-mode .contact-header {
+  background-color: #1e1e1e; /* Dark header */
+  color: #e0e0e0; /* Light text */
+}
+
+.dark-mode .contact-header h1 {
+  color: #ffffff; /* White heading */
+}
+
+.dark-mode .contact-us {
+  background-color: #1e1e1e; /* Dark background for form */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); /* Lighter shadow for contrast */
+  color: #e0e0e0; /* Light text */
+}
+
+.dark-mode .contact-us p {
+  color: #e0e0e0; /* Light text */
+}
+
+.dark-mode .contact-form input,
+.dark-mode .contact-form textarea {
+  background-color: #333; /* Dark background for inputs */
+  color: #e0e0e0; /* Light text */
+  border: 1px solid #555; /* Lighter border */
+}
+
+.dark-mode .contact-form input:focus,
+.dark-mode .contact-form textarea:focus {
+  border-color: #888; /* Focus border color */
+}
+
+.dark-mode .contact-form button {
+  background-color: #444; /* Dark button background */
+  color: #e0e0e0; /* Light text */
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.dark-mode .contact-form button:hover {
+  background-color: #555; /* Lighter hover background */
+}
+
+.dark-mode .success-message {
+  color: #80e0a7; /* Light green for success message */
+}
+
+
+

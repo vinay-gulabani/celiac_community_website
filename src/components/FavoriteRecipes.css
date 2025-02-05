@@ -1,0 +1,114 @@
+/* Background and Container Styling */
+.favorite-recipes-container {
+  padding: 100px 200px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-image: url("C:\Users\gulab\Desktop\VGG\Coding-Projects\celiac_community_website\public\images\dinner-table.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+/* Header and Title Styling */
+.favorite-recipes-container h1 {
+  font-size: 2.5rem;
+  color: #f8f9fa;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Recipe Item Styling */
+.recipe-item {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  list-style-type: none;
+  margin-right: 5%;
+}
+
+/* Recipe Header Styling */
+.recipe-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+
+}
+
+.recipe-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #ffeb3b;
+}
+
+/* Remove Button Styling */
+.remove-btn {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Instructions and Ingredients Styling */
+.instructions-text p, .recipe-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 5px 0;
+}
+
+/* No Recipes Message Styling */
+.no-recipes {
+  font-size: 1.5rem;
+  color: #ffc107;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .favorite-recipes-container {
+    padding: 20px;
+    margin-top: 40px;
+    align-items: left;
+  }
+
+  .recipe-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .recipe-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    list-style-type: none;
+    margin-right: 10%;
+  }
+}
+
+.favorite-recipes-container .instructions-text p,
+.favorite-recipes-container .recipe-item p {
+  color: #F5E8C7; /* Set the text color to white */
+}
+
+/* Optional: Ensure no conflicting styles for nested paragraphs */
+.favorite-recipes-container .recipe-item p strong {
+  color: #FFD966; /* Ensure strong text within paragraphs is also white */
+}

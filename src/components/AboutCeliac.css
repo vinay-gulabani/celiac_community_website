@@ -10,9 +10,10 @@
   }
   
   .celiac-image {
-    max-width: 80%; /* Adjust size as needed */
+    max-width: 60%; /* Adjust size as needed */
     height: auto;
     margin-bottom: 1rem;
+    border-radius: 5%;
   }
   
   .celiac-text {
@@ -34,5 +35,33 @@
   
   .learn-more-button:hover {
     background-color: #e04d4d; /* Slightly darker on hover */
+  }
+  
+  .dark-mode .about-celiac {
+    background-color: #1a1a1a; /* Dark background for the section */
+    color: #e0e0e0; /* Light text color */
+  }
+  
+  .dark-mode .about-celiac-content {
+    align-items: center; /* No change here unless specific styling is required */
+  }
+  
+  .dark-mode .celiac-image {
+    border-radius: 5%; /* Same radius but matching dark mode theme */
+    border: 2px solid #444; /* Optional border for better visibility in dark mode */
+  }
+  
+  .dark-mode .celiac-text p{
+    color: #d3d3d3; /* Lighter color for readability */
+  }
+  
+  .dark-mode .learn-more-button {
+    background-color: #ec6363; /* Keep button color consistent unless dark mode variation is desired */
+    color: #fff;
+    border: 1px solid #555; /* Optional border */
+  }
+  
+  .dark-mode .learn-more-button:hover {
+    background-color: #b32a2a; /* Darker hover effect for dark mode */
   }
   

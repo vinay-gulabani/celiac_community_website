@@ -1,0 +1,419 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f3f3; /* Grid paper background */
+    background-image: radial-gradient(circle, #d8d4d4 1px, transparent 1px);
+    background-size: 20px 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto;
+    margin-top: 80px; /* Adjust the top margin to account for the header height */
+    padding: 2rem;
+    max-width: 800px;
+    gap: 1.5rem;
+}
+
+.dashboard-header {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4f4f4f;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    background-color: #ffe599;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.profile-section {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+     /* Stack profile picture and details vertically */
+}
+
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 100px;
+    overflow: hidden;
+    border: 3px solid #ffd966;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem; /* Space between the profile picture and the delete button */
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.upload-btn {
+    margin-top: 0.5rem;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+    background-color: #6fa8dc;
+    width: 135px;
+    height:19px;
+    padding: 20px 10px;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+    align-items: center;
+}
+
+.user-details {
+    
+    flex: 1;
+    padding: 0.5rem;
+    background-color: #fff2cc;
+    border-radius: 12px;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.user-details h2 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.user-details p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+    margin: 0.3rem 0;
+}
+
+/* Content section styling */
+.content-section {
+    display: grid;
+    grid-template-columns: 1fr; /* Stack items vertically (1 column) */
+    gap: 1.5rem; /* Add space between the items */
+    width: 100%;
+    align-items: center;
+    margin-top: 20px; /* Add margin to separate from top content */
+}
+
+/* Content box styling */
+.content-box {
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: #d9ead3; /* Light green background */
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.5s, box-shadow 0.5s; /* Smooth transition for hover effect */
+    align-items: center;
+}
+
+/* Hover effect on content boxes */
+.content-box:hover {
+    transform: translateY(-8px); /* Slightly lift the box */
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* Heading styling inside content box */
+.content-box h3 {
+    font-size: 1.4rem; /* Font size for heading */
+    color: #333; /* Dark color for text */
+    margin-bottom: 0.5rem; /* Space below the heading */
+    text-align: center; /* Centered text */
+}
+
+/* Paragraph styling inside content box */
+.content-box p {
+    font-size: 1rem; /* Font size for paragraph */
+    color: #000000; /* Lighter color for paragraph text */
+    text-align: left; /* Centered text */
+    text-decoration: solid;
+    font-weight:800;
+}
+
+/* Media Query for responsiveness: Stack content in multiple columns on larger screens */
+
+.goal-box {
+    background-color: #f4cccc;
+}
+
+.likes-box {
+    background-color: #d9d2e9;
+}
+.likes-box:hover {
+    background-color: #ccbeeb;
+}
+
+.latest-box {
+    background-color: #fff2cc;
+}
+
+.latest-box:hover{
+    background-color: #ffe8a4;
+}
+
+.logout-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #e06666;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 2rem;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.logout-button:hover {
+    background-color: #cc0000;
+    transform: translateY(-3px);
+}
+
+.delete-pic-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 0px 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    width: 25px;
+    margin-top: -7.5rem;
+}
+
+.delete-pic-button:hover {
+    background-color: #ff3333; /* Darker red on hover */
+}
+
+.welcome-message {
+    margin-top: 20px; /* Space between the header and welcome message */
+    text-align: center;
+}
+
+.welcome-message h1 {
+    font-size: 1.8rem; /* Slightly smaller font size */
+    color: #333333; /* Dark gray (close to black) */
+    font-weight: bold;
+    margin: 0;
+}
+
+
+
+.favorite-recipe-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+  
+  .favorite-recipe-button:hover {
+    background-color: #45a049;
+  }
+
+  .content-list{
+    list-style-type: none;
+    margin: 0;
+    align-self: left;
+    align-items: left;
+    padding: 0;
+    transition: color 0.7s, background-color 0.7s; /* Smooth transition for hover effect */
+
+  }
+
+  .box a {
+    color: black; /* Make the link text black */
+    text-decoration: none; /* Remove underline */
+    align-items: left;
+    align-content: left;
+    font-weight: bold; /* Make the text bold for emphasis */
+    font-size: 20px; /* Adjust the font size if needed */
+    transition: color 1s, background-color 1s; /* Smooth transition for hover effect */
+    line-height: 35px;
+  }
+  
+  .box a:hover {
+    color: #464a4f; /* Change the text color to blue on hover */
+    padding: 3px 5px; /* Add some padding for a subtle effect */
+    border-radius: 4px; /* Rounded corners for the background */
+    
+  }
+  
+  .box a:active {
+    color: #0056b3; /* Darker blue color when the link is clicked */
+  }
+  
+  .box1 {
+    color: black; /* Make the link text black */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the text bold for emphasis */
+    font-size: 20px; /* Adjust the font size if needed */
+    transition: color 0.7s, background-color 0.7s; /* Smooth transition for hover effect */
+    line-height: 35px;
+    align-items: center;
+  }
+
+  .box1:hover {
+    transform: translateY(-8px); /* Slightly lift the box */
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+  
+
+  .favorite-recipes-container {
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: #ffe599; /* Warm yellow background */
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+    transition: transform 0.7s, box-shadow 0.7s;
+    text-align: center;
+  }
+  
+
+  
+
+  
+  .go-to-recipes-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 15px;
+    color: white;
+    background-color: #000000; /* Soft blue button */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 1rem;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+    width: 178px;
+    align-self: center;
+    align-items: center;
+
+  }
+  
+  .go-to-recipes-button:hover {
+    background-color: #000000;
+    transform: translateY(-3px);
+    
+  }
+  /* Favorite recipes container hover effect */
+.favorite-box {
+    background-color: #f9cb9c; /* Light yellow background */
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    padding: 1.5rem;
+    border-radius: 12px;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Smooth transition for hover effects */
+}
+
+.favorite-box:hover {
+    transform: translateY(-5px); /* Lift the box slightly */
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+    background-color: #ffc080; /* Slightly darker yellow on hover */
+}
+
+
+  
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    background-image: none; /* Remove grid paper background */
+}
+
+body.dark-mode .dashboard-header {
+    background-color: #1c1c1c; /* Slightly darker header background */
+    color: #ffcc00; /* Soft yellow header text */
+}
+
+body.dark-mode .profile-pic {
+    background-color: #1e1e1e; /* Darker background for profile pic */
+    border: 3px solid #ffcc00; /* Light yellow border */
+}
+
+body.dark-mode .user-details {
+    background-color: #2c2c2c; /* Dark background */
+    color: #e0e0e0; /* Light text */
+}
+
+body.dark-mode .user-details h2 {
+    color: #ffcc00; /* Soft yellow for headings */
+}
+
+body.dark-mode .content-box {
+    background-color: #333; /* Darker content box background */
+    color: #e0e0e0; /* Light text color */
+}
+
+body.dark-mode .content-box h3{
+
+    color: #ffcc00; /* Light text color */
+}
+
+body.dark-mode .content-box:hover {
+    background-color: #444; /* Lighter dark background on hover */
+}
+
+body.dark-mode .logout-button {
+    background-color: #d34d4d; /* Red button */
+}
+
+body.dark-mode .logout-button:hover {
+    background-color: #f96b61; /* Lighter red on hover */
+}
+
+body.dark-mode .delete-pic-button {
+    background-color: #ff6643; /* Warm red for delete button */
+}
+
+body.dark-mode .delete-pic-button:hover {
+    background-color: #ff7043; /* Lighter red on hover */
+}
+
+body.dark-mode .favorite-recipe-button {
+    background-color: #388e3c; /* Darker green */
+}
+
+body.dark-mode .favorite-recipe-button:hover {
+    background-color: #43a047; /* Lighter green on hover */
+}
+
+body.dark-mode .content-list {
+    color: #e0e0e0; /* Light text color */
+}
+
+body.dark-mode .box a {
+    color: #e0e0e0; /* Light color for links */
+}
+
+body.dark-mode .box a:hover {
+    color: #bb86fc; /* Lighter color on hover */
+}
+
+body.dark-mode .favorite-recipes-container {
+    background: linear-gradient(135deg, #2a2a2a, #1f1f1f); /* Adds depth with a gradient */
+    border: 1px solid #333; /* Optional subtle border for distinction */
+}
+
+
+body.dark-mode .go-to-recipes-button {
+    background-color: #1f1f1f; /* Dark button */
+}
+
+body.dark-mode .go-to-recipes-button:hover {
+    background-color: #333333; /* Lighter dark color on hover */
+}
+
+

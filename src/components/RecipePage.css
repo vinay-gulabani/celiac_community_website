@@ -1,0 +1,372 @@
+/* General styles for the RecipePage */
+.recipe-page {
+  text-align: center;
+  padding: 40px 20px;
+  padding-top: 100px;
+  font-family: 'Arial', sans-serif;
+  background-color: #fef7e7; /* Warm light beige for overall background */
+}
+
+h1 {
+  font-size: 36px;
+  color: #ec6363; /* Primary coral color */
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  color: #333; /* Neutral dark gray for contrast */
+  margin-bottom: 20px;
+}
+
+/* Input container */
+.input-container {
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 12px;
+  font-size: 16px;
+  width: 80%;
+  max-width: 400px;
+  border: 2px solid #5c9ead; /* Teal border for a cool touch */
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #f7c844; /* Vibrant yellow focus color */
+}
+
+/* Button styling */
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #ec6363; /* Primary button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #d15454; /* Darker coral on hover */
+}
+
+/* Recipe card container */
+.recipes-container {
+  margin-top: 20px;
+}
+
+.recipe-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-card h3 {
+  font-size: 28px;
+  color: #ec6363; /* Title in coral */
+  margin-bottom: 10px;
+}
+
+.recipe-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
+/* Ingredients and Instructions side by side */
+.recipe-details {
+  margin-top: 20px;
+}
+
+.side-by-side {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.recipe-ingredients,
+.recipe-instructions {
+  flex: 1;
+  max-width: 45%; /* Restrict width for better readability */
+  background-color: #ffebb3; /* Soft yellow for ingredient/instruction containers */
+  color: #333; /* Neutral text color for contrast */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.recipe-ingredients:hover,
+.recipe-instructions:hover {
+  transform: scale(1.03); /* Slight pop-up effect */
+  background-color: #ffe08c; /* Brighter yellow on hover */
+}
+
+.recipe-ingredients h4,
+.recipe-instructions h4 {
+  font-size: 20px;
+  color: #5c9ead; /* Teal for container headings */
+  margin-bottom: 10px;
+}
+
+.ingredients-text p {
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+.instructions-text p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+/* Spinner loading */
+.spinner {
+  margin: 20px auto;
+  width: 50px;
+  height: 50px;
+  border: 6px solid #ffe6e6; /* Subtle pink spinner base */
+  border-top: 6px solid #ec6363; /* Coral active spinner color */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .side-by-side {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .recipe-ingredients,
+  .recipe-instructions {
+    max-width: 100%; /* Full width for smaller screens */
+  }
+
+  .recipe-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Recipe image styling */
+/* Recipe image styling */
+.recipe-image {
+  position: relative;
+  width: 100%;
+  max-width: 275px;
+  height: 275px; /* Ensure it's a square for perfect circular effect */
+  border-radius: 50%; /* Makes the image circular */
+  margin: 10px auto;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover; /* Ensures the image fits well in the circle */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Adds a modern shadow */
+}
+
+/* Hover effect to enhance modern look */
+.recipe-image:hover {
+  transform: scale(1.04); /* Slight zoom effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+
+/* Overlay container */
+.recipe-image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.recipe-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px; /* Match the image border */
+}
+
+.recipe-image-container:hover .recipe-overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.recipe-overlay h4 {
+  font-size: 18px;
+  margin: 5px 0;
+  color: #f7c844; /* Vibrant yellow for text */
+}
+
+.recipe-overlay p {
+  font-size: 14px;
+  margin: 0;
+  color: #fff; /* White for secondary text */
+}
+
+/* Updated preferences container */
+.preferences-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.preferences-container label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #5c9ead;
+}
+
+.preferences-container select {
+  padding: 10px;
+  font-size: 14px;
+  border: 2px solid #ec6363;
+  border-radius: 5px;
+}
+
+select:focus {
+  outline: none;
+  border-color: #f7c844; /* Highlighted border */
+}
+.header {
+  position: fixed; /* Makes the header stick to the top */
+  top: 0;
+  left:0px;
+  width: 97%; /* Ensures it spans the full width */
+  z-index: 1000; /* Keeps it above other elements */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for distinction */
+}
+
+/* Disclaimer styling */
+.disclaimer {
+  background-color: #ffebb3; /* Soft yellow to match the page */
+  color: #333; /* Neutral text color for readability */
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 80%; /* Centers the container and limits its width */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for emphasis */
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.disclaimer p {
+  margin: 0; /* Remove default paragraph margin */
+  color:#333;
+}
+
+.favorite-button{
+  margin: 10px;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text color */
+}
+
+.dark-mode .recipe-page {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode h1 {
+  color: #f7c844; /* Yellow for headings */
+}
+
+.dark-mode p {
+  color: #e0e0e0; /* Light text */
+}
+
+.dark-mode input[type="text"] {
+  background-color: #333;
+  color: #e0e0e0;
+  border-color: #f7c844;
+}
+
+.dark-mode .btn {
+  background-color: #f7c844;
+  color: #333;
+}
+
+.dark-mode .btn:hover {
+  background-color: #f7c844;
+}
+
+.dark-mode .recipe-card {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.dark-mode .recipe-card h3 {
+  color: #f7c844;
+}
+
+.dark-mode .recipe-ingredients,
+.dark-mode .recipe-instructions {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+.dark-mode .recipe-ingredients h4,
+.dark-mode .recipe-instructions h4 {
+  color: #f7c844;
+}
+
+.dark-mode .recipe-image {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Lighter shadow for dark mode */
+}
+
+.dark-mode .recipe-overlay {
+  background: rgba(255, 255, 255, 0.4); /* Light overlay for dark mode */
+}
+
+.dark-mode .preferences-container label {
+  color: #f7c844;
+}
+
+.dark-mode .preferences-container select {
+  background-color: #333;
+  color: #e0e0e0;
+  border-color: #f7c844;
+}
+
+.dark-mode .disclaimer {
+  background-color: #333;
+  color: #e0e0e0;
+}

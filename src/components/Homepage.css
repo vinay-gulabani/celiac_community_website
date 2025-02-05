@@ -1,0 +1,43 @@
+/* Styling for centered sections */
+.centered-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin: 2rem auto;
+    max-width: 1200px; /* Optional: Limit the width for a better appearance */
+    background-color: #f9f9f9; /* Optional: Add a subtle background color */
+    border-radius: 8px; /* Optional: Rounded edges for sections */
+    margin-top: 50px; /* Adjust the top margin to account for the header height */
+  }
+
+  .dark-mode .centered-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin: 2rem auto;
+    max-width: 1200px; /* Optional: Limit the width for a better appearance */
+    background-color: #000000; /* Optional: Add a subtle background color */
+    border-radius: 8px; /* Optional: Rounded edges for sections */
+    margin-top: 50px; /* Adjust the top margin to account for the header height */
+  }
+  
+  /* Styling for AboutCeliac section */
+  .about-section {
+    padding: 2rem 1rem;
+    margin: 2rem auto;
+    max-width: 1200px; /* Match the max-width of other sections */
+    text-align: left; /* Align the text to the left */
+  }
+  
+  /* General styles for spacing between sections */
+  section {
+    margin-bottom: 3rem; /* Add consistent spacing between sections */
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  

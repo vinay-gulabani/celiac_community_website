@@ -17,7 +17,7 @@ function AboutCeliac() {
             When people with celiac disease consume gluten, their immune system responds by
             damaging the small intestine, leading to various health complications.
           </p>
-          <button className="learn-more-button" onClick={() => window.location.href = '/about'}>
+          <button className="learn-more-button" onClick={() => window.location.href = '/blog/kBvkc1GYuQb747r2hWJ6'}>
             Learn more about celiac disease
           </button>
         </div>

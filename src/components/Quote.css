@@ -1,19 +1,121 @@
-/* Quote.css */
+/* Main container with animated max-width */
 .quote-container {
-    background-color: #FFDDD2; /* Soft peach for a gentle background */
-    color: #4A4A4A; /* Soft dark gray for text */
-    padding: 15px 20px;
-    border-radius: 8px;
-    margin: 20px;
-    text-align: center;
+  background-color: #F2F2F2; /* Soft neutral background */
+  color: #333; /* Dark gray for better readability */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  margin: 40px auto;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, max-width 0.5s ease-in-out; /* Added max-width transition */
+  background-image: url("C:\Users\gulab\Desktop\VGG\Coding-Projects\celiac_community_website\public\images\home_page.jpg");
+  height: 300px;
+  align-items: center;
+}
+
+.fade-in {
+  max-width: 900px; /* Larger size during fade-in */
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+.fade-out {
+  max-width: 700px; /* Smaller size during fade-out */
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+/* Quote box */
+.quote-box {
+  background-color: #FFDDD2; /* Soft peach for gentle aesthetic */
+  padding: 25px;
+  border-radius: 8px;
+  margin: auto;
+  font-family: 'Verdana', serif; /* Elegant font for the quote */
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #4A4A4A; /* Soft dark gray */
+  line-height: 1.5;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Button style */
+.new-quote-button {
+  background-color: #F4A261; /* Light orange accent */
+  color: black;
+  font-weight: bold;
+
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+  margin: auto;
+}
+
+.new-quote-button:hover {
+  background-color: #E76F51; /* Darker shade of orange for hover effect */
+}
+
+/* Animation for fading in and out */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0px);
   }
-  
-  .quote-text {
-    font-size: 18px;
-    font-style: italic;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  .quote {
-    text-align: center;
-    font-size: 1.2em;
-    color: #333;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
   }
+  to {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+}
+
+
+
+.dark-mode .quote-container {
+  background-color: #000000; /* Dark background */
+  color: #e0e0e0; /* Light text color for readability */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Adjusted shadow for dark mode */
+}
+
+.dark-mode .quote-box {
+  background-color: #ffe57b; /* Dark gray for a subtle contrast */
+  color: black; /* Light text color */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+.dark-mode .new-quote-button {
+  background-color: #EC6363; /* Vibrant accent color for the button */
+  color: black; /* Light text for contrast */
+}
+
+.dark-mode .new-quote-button:hover {
+  background-color: #B24545; /* Darker shade for hover effect */
+}
+
+.dark-mode .fade-in {
+  max-width: 900px; /* No change unless specific adjustments are needed */
+}
+
+.dark-mode .fade-out {
+  max-width: 700px; /* No change unless specific adjustments are needed */
+}
+
+.dark-mode .quote-text{
+  color: black !important;
+}
+
+
+
+

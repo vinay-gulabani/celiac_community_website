@@ -1,44 +1,83 @@
-import React from 'react';
-import './CeliacDigest.css';
+import React, { useEffect, useState } from "react";
+import { collection, query, orderBy, limit, getDocs } from "firebase/firestore";
+import { db } from "../firebase/firebaseConfig"; // Adjust the path to your firebase.js file
+import "./CeliacDigest.css";
 
 function CeliacDigest() {
-  // Sample blog post data with images
-  
-  const blogPosts = [
-    {
-      title: "Celiac Disease in Children",
-      description: "Learn how to spot the signs and symptoms in kids.",
-      link: "/blog/celiac-disease-in-children",
-      image: "/images/quote_of_the_day.png", // Replace with the actual path or URL
-    },
-    {
-      title: "Gluten-Free Diet: What You Need to Know",
-      description: "Discover the ins and outs of a gluten-free diet.",
-      link: "/blog/gluten-free-diet",
-      image: "/images/quote_of_the_day.png",
-    },
-    {
-      title: "Celiac Disease and Mental Health",
-      description: "Uncover the link between celiac disease and mental well-being.",
-      link: "/blog/celiac-disease-mental-health",
-      image: "/images/quote_of_the_day.png",
-    },
-  ];
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Helper function to extract plain text from HTML
+  const extractPlainTextFromHTML = (htmlContent) => {
+    if (!htmlContent) return "";
+    const doc = new DOMParser().parseFromString(htmlContent, "text/html");
+    return doc.body.textContent || ""; // Extracts only the text content
+  };
+
+  // Helper function to truncate to 15 words
+  const truncateTo15Words = (text) => {
+    if (!text) return "";
+    return text.split(" ").slice(0, 15).join(" ") + "...";
+  };
+
+  useEffect(() => {
+    // Fetch the top 3 latest blogs
+    const fetchBlogs = async () => {
+      try {
+        const blogsCollection = collection(db, "blogs");
+        const blogsQuery = query(blogsCollection, orderBy("date", "desc"), limit(3));
+        const querySnapshot = await getDocs(blogsQuery);
+
+        const blogsData = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+
+        setBlogs(blogsData);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="celiac-digest">
       <h2>Celiac Digest</h2>
       <div className="digest-items">
-        {blogPosts.map((post, index) => (
-          <div className="digest-item" key={index}>
-            <h3>{post.title}</h3>
-            <img src={post.image} alt={post.title} className="digest-image" />
-            <p>{post.description}</p>
-            <a href={post.link} className="read-more">
-              Read more
-            </a>
-          </div>
-        ))}
+        {blogs.map((post) => {
+          const plainTextContent = extractPlainTextFromHTML(post.content); // Extract plain text from HTML
+          const truncatedContent = truncateTo15Words(plainTextContent); // Truncate to 15 words
+
+          return (
+            <div className="digest-item" key={post.id}>
+  {/* Title with dangerouslySetInnerHTML */}
+  <h3
+    dangerouslySetInnerHTML={{ __html: post.title }}
+  />
+  
+  <img src={post.image} alt={post.title} className="digest-image" />
+  
+  {/* Excerpt with dangerouslySetInnerHTML */}
+  <p
+    dangerouslySetInnerHTML={{ __html: post.excerpt }}
+  />
+  
+  <p className="digest-content">{truncatedContent}</p>
+  
+  <a href={`/blog/${post.id}`} className="read-more">
+    Read more
+  </a>
+</div>
+
+          );
+        })}
       </div>
     </div>
   );

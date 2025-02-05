@@ -4,24 +4,27 @@ import Quote from './Quote';
 import CeliacDigest from './CeliacDigest';
 import AboutCeliac from './AboutCeliac';
 import Footer from './Footer'; // Import the Footer component
+import "./Homepage.css";
 
 function Homepage() {
   return (
     <div>
       <Header />
-      
-      <section>
+
+      <section className="centered-section">
         <h2>Quote of the Day</h2>
         <Quote />
       </section>
 
-      <AboutCeliac /> {/* Add the AboutCeliac component here */}
+      <section className="about-section">
+        <AboutCeliac />
+      </section>
 
-      <section>
+      <section className="centered-section">
         <CeliacDigest />
       </section>
 
-      <Footer /> {/* Add Footer component at the bottom */}
+      <Footer />
     </div>
   );
 }
