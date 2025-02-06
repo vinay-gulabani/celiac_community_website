@@ -8,26 +8,36 @@ export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true); // Prevents unnecessary redirects
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      setLoading(false); // ✅ Stops loading once user state is set
+      setLoading(false);
     });
 
     return unsubscribe;
   }, []);
 
   const login = async (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password);
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      setUser(userCredential.user); // ✅ Immediately update user state
+      return userCredential.user;
+    } catch (error) {
+      throw error;
+    }
   };
 
   const logout = async () => {
-    return signOut(auth);
+    try {
+      await signOut(auth);
+      setUser(null); // ✅ Immediately reset user state on logout
+    } catch (error) {
+      console.error("Logout Error:", error);
+    }
   };
 
-  // ✅ FIX: Prevents blank screen by showing a loading message
   if (loading) {
     return <h1 style={{ textAlign: 'center', marginTop: '20%' }}>Loading...</h1>;
   }

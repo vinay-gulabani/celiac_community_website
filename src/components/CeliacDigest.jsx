@@ -2,10 +2,14 @@ import React, { useEffect, useState } from "react";
 import { collection, query, orderBy, limit, getDocs } from "firebase/firestore";
 import { db } from "../firebase/firebaseConfig"; // Adjust the path to your firebase.js file
 import "./CeliacDigest.css";
+import { useNavigate } from "react-router-dom";
+
 
 function CeliacDigest() {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+  
 
   // Helper function to extract plain text from HTML
   const extractPlainTextFromHTML = (htmlContent) => {
@@ -71,9 +75,10 @@ function CeliacDigest() {
   
   <p className="digest-content">{truncatedContent}</p>
   
-  <a href={`/blog/${post.id}`} className="read-more">
-    Read more
-  </a>
+  <button className="read-more" onClick={() => navigate(`/blog/${post.id}`)}>
+  Read more
+</button>
+
 </div>
 
           );

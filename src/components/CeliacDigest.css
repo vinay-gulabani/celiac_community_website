@@ -5,6 +5,9 @@
     margin: 10px auto; /* Center the container horizontally */
     max-width: 1200px; /* Optional: Set a maximum width */
     text-align: center; /* Center align text */
+
+
+    
 }
 
 .celiac-digest h2 {
@@ -14,34 +17,51 @@
 }
 
 .digest-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-    gap: 15px;
-    justify-content: center; /* Center the grid items */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 2rem;
+  padding: 2rem;
+  justify-content: center;
+  background-color: #f9f9f9;
 }
 
+
+
 .digest-item {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  padding: 20px;
 }
+
+.digest-item:hover {
+  transform: translateY(-5px);
+}
+
 
 .digest-item h3 {
     font-size: 1.2em;
     color: black;
 }
 
+
+
 .digest-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 10px 0;
+  width: 100%;
+  height: 200px; /* Fixed height for consistency */
+  object-fit: cover; /* Ensures images scale properly */
+  border-radius: 8px;
+  margin: 10px 0;
 }
+
+
+
+
+
 
 .digest-item p {
     color: black;

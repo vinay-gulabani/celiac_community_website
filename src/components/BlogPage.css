@@ -7,6 +7,12 @@
   background-color: #f9f9f9;
   color: #333;
   font-family: 'Arial', sans-serif;
+
+
+  margin-top: -5rem;
+  opacity: 0;
+  transform: translateY(20px); /* Start slightly below */
+  animation: fadeInSlideUp 1s ease-in-out forwards; /* Smooth fade-in and slide-up */
 }
 
 .blog-title{
@@ -53,6 +59,7 @@
   height: 200px;
   object-fit: cover;
 }
+
 
 .blog-content {
   padding: 1rem;

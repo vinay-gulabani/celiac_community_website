@@ -38,7 +38,7 @@ const Header = () => {
 
   return (
     <header className="header">
-<div className="app-title">Libre De Gluten</div>
+<div className="app-title">Flourless Haven</div>
 <img src="/images/logo_gd2.png" alt="Libre De Gluten Logo" className="app-logo" />
 
       <nav className={`navbar ${isNavOpen ? "show" : ""}`}>

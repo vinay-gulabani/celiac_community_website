@@ -15,6 +15,12 @@
   opacity: 0;
   animation: fadeIn 1s forwards;
 
+
+  margin-top: -5rem;
+  opacity: 0;
+  transform: translateY(20px); /* Start slightly below */
+  animation: fadeInSlideUp 1s ease-in-out forwards; /* Smooth fade-in and slide-up */ 
+
 }
 
 @keyframes fadeIn {

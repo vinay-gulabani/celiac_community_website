@@ -5,6 +5,7 @@ body {
   padding-top: 5rem;
   background-color: #f9f9f9;
   color: #333;
+
 }
 
 /* Container for the entire page */
@@ -12,6 +13,11 @@ body {
   padding: 20px;
   max-width: 800px;
   margin: 0 auto;
+
+
+  opacity: 0;
+  transform: translateY(20px); /* Start slightly below */
+  animation: fadeInSlideUp 1s ease-in-out forwards; /* Smooth fade-in and slide-up */
 }
 
 /* Header Styles */
