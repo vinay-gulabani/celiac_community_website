@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./ContactUs.css";
 import Header from "./Header";
 import Footer from './Footer'; // Import the Footer component
+import { Helmet } from "react-helmet";
 
 
 
@@ -51,6 +52,11 @@ const ContactUs = () => {
 
   return (
     <div className="contact-us-page">
+      <Helmet>
+      <title>Contact Flourless Haven | Get in Touch with Our Celiac Community</title>
+<meta name="description" content="Have questions or need support? Contact Flourless Haven today! We’re here to help with gluten-free resources, advice, and community support." />
+
+            </Helmet>
       <Header className="header" />
       <header className="contact-header">
         <h1>Contact Us</h1>
@@ -60,7 +66,7 @@ const ContactUs = () => {
       <div className="contact-us">
         <p>We'd love to hear from you! Please fill out the form below.</p>
         <form className="contact-form" onSubmit={handleSubmit}>
-          <input
+          <input className="contact_name"
             type="text"
             name="name"
             placeholder="Your Name"

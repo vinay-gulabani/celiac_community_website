@@ -1,105 +1,156 @@
-/* Auth.css */
+/* Centering the Auth Container */
 .auth-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #000;
-    color: #fff;
-    margin-top: -5rem;
-  }
-  
-  .auth-card {
-    background: #fff;
-    color: #000;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-    text-align: center;
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  .auth-card h2 {
-    margin-bottom: 1.5rem;
-    font-size: 24px;
-    color: #000;
-  }
-  
-  .auth-card input {
-    margin-bottom: 1rem;
-    padding: 0.75rem;
-    border: 1px solid #333;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: #f9f9f9;
-  }
-  
-  .auth-card input:focus {
-    border-color: #000;
-    outline: none;
-  }
-  
-  .auth-button {
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 0.75rem;
-    font-size: 16px;
-    cursor: pointer;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+  margin-top: -5rem;
+}
 
-  .auth-btn {
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 0.35rem;
-    font-size: 12px;
-    cursor: pointer;
-    font-weight: none;
-    text-decoration: none;
-  }
+/* Auth Card Styles */
+.auth-card {
+  background: #fff;
+  color: #000;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.auth-card h2 {
+  margin-bottom: 1.5rem;
+  font-size: 24px;
+  color: #000;
+}
+
+/* Common Input Styles */
+.auth-card input {
+  width: 94%;
+  padding: 0.75rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: border 0.3s, background 0.3s;
+  margin-bottom: 1rem;
+}
+
+.name {
+  width: 94% !important;
+  padding: 0.75rem !important;
+  border: 1px solid #333 !important;
+  border-radius: 5px !important;
+  font-size: 16px !important;
+  background-color: #f9f9f9 !important;
+  transition: border 0.3s, background 0.3s !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Fixing Password Field */
+.password-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.password-container input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: border 0.3s, background 0.3s;
+}
+
+/* Eye Icon Styles */
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 35%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #555;
+  z-index: 10; /* Ensure it stays on top */
+}
+
+.toggle-password:hover {
+  color: #000;
+}
+.dark-mode .toggle-password{
+  color: #555 !important;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s ease;
+  z-index: 10; /* Ensure it stays on top */
+}
+
+/* Button Styles */
+.auth-button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.auth-button:hover {
+  background-color: #444;
+}
+
+/* Error Message */
+.error-text {
+  color: #ff4d4d;
+  margin: 1rem 0;
+}
+
+.auth-footer {
+  margin-top: 1rem;
+  font-size: 14px;
+}
+
+.auth-footer span {
+  color: #000;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Success Message */
+.success-message {
+  font-size: 32px;
+  font-weight: bold;
+  animation: fadeInOut 3s ease-in-out;
+  color: #fff;
+  text-align: center;
+}
+
+.success {
+  color: white;
+}
+
+@keyframes fadeInOut {
+  0%, 50%, 100% { opacity: 0; }
+  50%, 75% { opacity: 1; }
+}
 
 
-  
-  .auth-button:hover {
-    background-color: #444;
-  }
-  
-  .error-text {
-    color: #ff4d4d;
-    margin: 1rem 0;
-  }
-  
-  .auth-footer {
-    margin-top: 1rem;
-    font-size: 14px;
-  }
-  
-  .auth-footer span {
-    color: #fff;
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  
-  .success-message {
-    font-size: 32px;
-    font-weight: bold;
-    animation: fadeInOut 3s ease-in-out;
-
-
-  }
-
-  .success{
-    color: white;
-  }
-  
-  @keyframes fadeInOut {
-    0%, 50%, 100% { opacity: 0; }
-    50%, 75% { opacity: 1; }
-  }
   
 
   .homepage {
@@ -113,4 +164,34 @@
 
 
 
+  
+
+
+
+  /* Google Sign-In Button */
+.google-button {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.google-logo {
+  width: 20px;
+  height: 20px;
+}
+
+.google-button:hover {
+  background-color: #f1f1f1;
+}
   

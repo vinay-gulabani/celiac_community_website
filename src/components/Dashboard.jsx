@@ -4,6 +4,7 @@ import { auth, db } from "../firebase/firebaseConfig";
 import { signOut } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import Footer from './Footer'; // Import the Footer component
+import { Link } from "react-router-dom"; // Import Link
 
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { updateDoc } from "firebase/firestore";
@@ -191,16 +192,15 @@ function Dashboard() {
             <h3>Liked Blogs</h3>
             {likedBlogs.length > 0 ? (
               <ul>
-                {likedBlogs.map((blog) => (
-                  <li key={blog.id} className="content-list">
-                    <a
-                      href={`/blog/${blog.id}`}
-                      className="liked-blog-link"
-                      dangerouslySetInnerHTML={{ __html: blog.title }}
-                    />
-                  </li>
-                ))}
-              </ul>
+              {likedBlogs.map((blog) => (
+                <li key={blog.id} className="content-list">
+                  <Link to={`/blog/${blog.id}`} className="liked-blog-link">
+                    <span dangerouslySetInnerHTML={{ __html: blog.title }} />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            
             ) : (
               <p>No liked blogs yet!</p>
             )}
@@ -210,16 +210,14 @@ function Dashboard() {
             <h3>Latest Blogs</h3>
             {latestBlogs.length > 0 ? (
               <ul>
-                {latestBlogs.map((blog) => (
-                  <li key={blog.id} className="content-list">
-                    <a
-                      href={`/blog/${blog.id}`}
-                      className="latest-blog-link"
-                      dangerouslySetInnerHTML={{ __html: blog.title }}
-                    />
-                  </li>
-                ))}
-              </ul>
+              {latestBlogs.map((blog) => (
+                <li key={blog.id} className="content-list">
+                  <Link to={`/blog/${blog.id}`} className="latest-blog-link">
+                    <span dangerouslySetInnerHTML={{ __html: blog.title }} />
+                  </Link>
+                </li>
+              ))}
+            </ul>
             ) : (
               <p>No blogs available yet!</p>
             )}

@@ -5,6 +5,7 @@
   import Header from "./Header";
   import "./RecipePage.css";
   import Footer from './Footer'; // Import the Footer component
+  import { Helmet } from "react-helmet";
 
   const RecipePage = () => {
     const [ingredients, setIngredients] = useState("");
@@ -90,6 +91,11 @@ const modifyIngredients = (ingredient) => {
 
     return (
       <div className="recipe-page">
+        <Helmet>
+        <title>AI Gluten-Free Recipe Finder | Personalized Recipes for You</title>
+<meta name="description" content="Discover delicious gluten-free recipes tailored to your preferences with our AI-powered recipe finder. Easy, healthy, and celiac-friendly!" />
+
+              </Helmet>
         <Header className="header" />
 
         <div className="recipe-content">

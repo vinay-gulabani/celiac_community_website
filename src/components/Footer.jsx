@@ -13,7 +13,7 @@ function Footer() {
           <button className='footer-section-button' onClick={() => window.location.href = "/terms"}>Terms of Service</button>
         </div>
 
-        <div className="footer-section social-section">
+        {/*<div className="footer-section social-section">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-facebook-f"></i>
           </a>
@@ -23,7 +23,7 @@ function Footer() {
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-instagram"></i>
           </a>
-        </div>
+        </div>*/}
       </div>
 
       {/* Bottom Row */}

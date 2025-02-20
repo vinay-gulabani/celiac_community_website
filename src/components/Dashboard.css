@@ -120,6 +120,7 @@ body {
     box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     transition: transform 0.5s, box-shadow 0.5s; /* Smooth transition for hover effect */
     align-items: center;
+    
 }
 
 /* Hover effect on content boxes */
@@ -420,6 +421,16 @@ body.dark-mode .go-to-recipes-button {
 
 body.dark-mode .go-to-recipes-button:hover {
     background-color: #333333; /* Lighter dark color on hover */
+}
+
+
+
+
+@media (min-width: 768px) { /* Applies only for tablets and desktops */
+    .content-box:hover {
+        transform: translateY(-8px);
+        box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2);
+    }
 }
 
 

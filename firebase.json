@@ -1,0 +1,21 @@
+{
+    "hosting": {
+      "public": "build",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        {
+          "source": "**/*.@(jpg|jpeg|gif|png|svg|css|js|woff|woff2|ttf|eot|otf)",
+          "headers": [
+            { "key": "Cache-Control", "value": "max-age=31536000, immutable" }
+          ]
+        },
+        {
+          "source": "/index.html",
+          "headers": [
+            { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+          ]
+        }
+      ]
+    }
+  }
+  

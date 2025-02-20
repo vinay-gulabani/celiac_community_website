@@ -24,9 +24,9 @@ function Quote() {
       <div className="quote-box">
         <p className="quote-text">{quote}</p>
       </div>
-      <button className="new-quote-button" onClick={fetchRandomQuote}>
+      {/*<button className="new-quote-button" onClick={fetchRandomQuote}>
         Get a New Quote
-      </button>
+      </button>*/}
     </div>
   );
 }

@@ -59,14 +59,20 @@
 
 /* Form Styling */
 .contact-form input,
-.contact-form textarea {
-  width: 90%;
-  padding: 15px;
-  margin-bottom: 20px;
+.contact-form textarea,
+.contact_name {
+  width: 90% !important;
+  padding: 15px !important;
+  margin-bottom: 20px !important;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 1rem;
+  border-radius: 5px !important;
+  font-size: 1rem !important;
   background-color: #f7f7f7;
+}
+
+.contact_name{
+  max-width: none !important;
+  margin-left: none !important;
 }
 
 .contact-form textarea {
@@ -121,7 +127,7 @@
 }
 
 .dark-mode .contact-header {
-  background-color: #1e1e1e; /* Dark header */
+  background-color: #121212; /* Dark header */
   color: #e0e0e0; /* Light text */
 }
 

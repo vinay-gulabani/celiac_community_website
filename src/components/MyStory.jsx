@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./MyStory.css";
 import Header from "../components/Header"; // Import the header component
+import { Helmet } from "react-helmet";
 
 const MyStory = () => {
   const [clickedSection, setClickedSection] = useState(null); // State to track clicked section
@@ -10,21 +11,21 @@ const MyStory = () => {
     {
       title: "A Journey That Began with Uncertainty",
       content:
-        "Hi, I’m Vinay, and I’ve been living with celiac disease since I was diagnosed as a toddler. This community is a reflection of my journey—a place designed to make life a little easier for others like me. When I was a baby, my parents grew increasingly worried as I hardly grew in height or weight. By the time I was two, their concerns deepened, and in 2009, after endless questions and uncertainty, a doctor finally gave us an answer: 'celiac disease.' It was a diagnosis that changed everything. From that moment, our lives shifted toward managing this autoimmune condition, learning about a gluten-free lifestyle, and coping with its demands.",
+        "Hi, I’m Vinay, and I’ve been living with celiac disease since I was diagnosed as a toddler. It all started when I was two, my parents were desperate for just one answer. Why wasn’t I growing like other kids? After months of uncertainty, in 2009, we finally had a diagnosis: celiac disease. From that moment, everything changed. Growing up in India and later in the UAE, where awareness was scarce, made everyday life a challenge. Finding safe food, avoiding accidental gluten exposure, and explaining my condition to others became part of my reality. Even the smallest trace of gluten could trigger severe symptoms like stomach pain, nausea, fatigue, and skin rashes.",
       image: "/images/pic_1.jpg",
       link: "#living-with-celiac",
     },
     {
       title: "Struggles in a World That Didn’t Understand",
       content:
-        "It’s been a path filled with challenges but also one that taught me resilience and adaptability. Being diagnosed with celiac disease in India, and later growing up in the UAE, came with unique challenges in regions where awareness was scarce. At that time, understanding of the condition was almost nonexistent, and we often found ourselves navigating uncharted territory, struggling to find solutions and understanding from those around us. My health often suffered from even the smallest exposure to gluten, with symptoms ranging from severe abdominal pain and nausea to constant fatigue and skin rashes.",
+        "Social events, school lunches, and family gatherings often felt isolating, as I had to sit out or bring my own food while others ate freely. Celiac disease wasn’t just about avoiding gluten, it was about constantly being on guard, questioning every meal, and struggling to make others understand the seriousness of the condition. At times, it felt like I was living in a world that wasn’t built for me, where my needs were overlooked and my struggles invisible to most.",
       image: "/images/pic_2.jpg",
       link: "#understanding-struggles",
     },
     {
       title: "Social and Health Impact",
       content:
-        "Social events like school lunches and family gatherings were especially isolating, as I often had to sit out or eat separately, watching others enjoy food I couldn’t touch. The lack of knowledge and resources made everyday life a minefield, constantly reminding me of how different my life was from others around me. Over the years, my journey has involved countless visits to doctors, regular medical tests, and a relentless commitment to a gluten-free lifestyle. These experiences have shaped me but also fueled my determination to create something meaningful.",
+        "Despite the challenges, living with celiac disease shaped me into who I am today. I’ve faced painful symptoms, endless doctor visits, and the frustration of navigating a world that often doesn’t understand. There were moments of helplessness, but also moments of strength. Over the years, I learned to adapt, researching gluten-free alternatives, educating those around me, and finding ways to live a full life despite the limitations. What once felt like a burden slowly turned into a mission to ensure others don’t have to go through the same struggles alone.",
       image: "/images/pic_3.jpg",
       link: "#supportive-community",
     },
@@ -32,7 +33,7 @@ const MyStory = () => {
       title: "Turning Struggles into Strength",
       content:
         "That’s how this celiac community was born. This platform is not just a resource; it’s a place of connection and understanding. My hope is that it will serve as a lifeline for newly diagnosed adults, parents trying to navigate their child’s diagnosis, and anyone seeking support. Whether it’s finding reliable gluten-free options, trusted healthcare professionals, or simply a community that understands, this website is here to make the journey a little smoother for everyone. Together, we can turn our struggles into strength and ensure that no one feels alone in this fight.",
-      image: "/images/pic_2.jpg",
+      image: "/images/PFP2.jpg",
       link: "#supportive-community",
     }
   ];
@@ -52,6 +53,11 @@ const MyStory = () => {
 
   return (
     <div className="my-story-page">
+      <Helmet>
+      <title>My Celiac Journey | The Story Behind Flourless Haven</title>
+<meta name="description" content="Read my personal journey of living with celiac disease, overcoming challenges, and building a gluten-free community to support others like me." />
+
+            </Helmet>
       <Header />
 
       <h1 className="page-title">My Story</h1>

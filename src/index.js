@@ -12,21 +12,15 @@ root.render(
 );
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker
-    .register('/service-worker.js')
-    .then(() => {
-      console.log('Service Worker Registered');
-    })
-    .catch((error) => {
-      console.error('Service Worker Registration Failed:', error);
-    });
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/service-worker.js') // Make sure this file exists in `public/`
+      .then(() => console.log('Service Worker Registered'))
+      .catch((error) => console.error('Service Worker Registration Failed:', error));
+  });
 }
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/serviceWorker.js')
-    .then(() => console.log("Service Worker Registered"))
-    .catch(error => console.log("Service Worker Registration Failed:", error));
-}
+
 
 
 

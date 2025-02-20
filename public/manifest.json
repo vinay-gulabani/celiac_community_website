@@ -1,14 +1,14 @@
 {
-  "short_name": "Celiac App",
-  "name": "Celiac Community App",
+  "short_name": "Flourless Haven",
+  "name": "Flourless Haven - Gluten-Free Living Made Easy", 
   "icons": [
     {
-      "src": "/icons/android-chrome-192x192.png",
+      "src": "https://raw.githubusercontent.com/vinay-gulabani/celiac_community_website/refs/heads/main/public/images/logo_gd2.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/icons/android-chrome-512x512.png",
+      "src": "https://raw.githubusercontent.com/vinay-gulabani/celiac_community_website/refs/heads/main/public/images/logo_gd2.png",
       "type": "image/png",
       "sizes": "512x512"
     }

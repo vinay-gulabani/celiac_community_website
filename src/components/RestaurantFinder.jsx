@@ -7,7 +7,7 @@ import AddRestaurant from "./AddRestaurant";
 import ReviewsModal from "./ReviewsModal"; // Import the new modal component
 import "./RestaurantFinder.css";
 import Footer from './Footer'; // Import the Footer component
-
+import { Helmet } from "react-helmet";
 
 
 function RestaurantFinder() {
@@ -17,7 +17,7 @@ function RestaurantFinder() {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [userID, setUserID] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const adminUserID = "kgIHdWf8PJZVFl5X1IyAtq7TRAm2";
+  const adminUserID = "fNhjiwJK5TZ67lQLrdx9L83Icvi2";
 
   useEffect(() => {
     const fetchRestaurants = async () => {
@@ -81,6 +81,11 @@ function RestaurantFinder() {
 
   return (
     <div>
+      <Helmet>
+      <title>Gluten-Free Restaurant Finder | Safe Dining for Celiacs</title>
+<meta name="description" content="Find safe and trusted gluten-free restaurants near you with our restaurant finder. Enjoy dining out without the worry of gluten exposure!" />
+
+            </Helmet>
       <Header />
     
     <div className="restaurant-finder-page">

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { increment } from "firebase/firestore";
-import { doc, getDoc, updateDoc, arrayUnion, arrayRemove} from "firebase/firestore";
-import { db , auth} from "../firebase/firebaseConfig";
+import { doc, getDoc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
+import { db, auth } from "../firebase/firebaseConfig";
+import { Helmet } from "react-helmet"; // Import Helmet
 import "react-quill/dist/quill.snow.css";
-
 import "./BlogDetails.css";
 
 function BlogDetails() {
@@ -74,31 +74,25 @@ function BlogDetails() {
 
       if (userDoc.exists()) {
         const userData = userDoc.data();
-
         const blogDocRef = doc(db, "blogs", id);
 
         // If the user already liked the blog
         if (userData.likedBlogs?.includes(id)) {
           console.log("You have already liked this blog.");
           await updateDoc(blogDocRef, { likes: increment(-1) });
-          await updateDoc(userDocRef, {
-            likedBlogs: arrayRemove(id), // Corrected to arrayRemove
-          });
+          await updateDoc(userDocRef, { likedBlogs: arrayRemove(id) });
 
           setBlog((prevBlog) => ({
             ...prevBlog,
             likes: Math.max((prevBlog.likes || 0) - 1, 0),
           }));
-
           return;
         }
 
         // If the user disliked the blog, remove the dislike first
         if (userData.dislikedBlogs?.includes(id)) {
           await updateDoc(blogDocRef, { dislikes: increment(-1) });
-          await updateDoc(userDocRef, {
-            dislikedBlogs: arrayRemove(id), // Corrected to arrayRemove
-          });
+          await updateDoc(userDocRef, { dislikedBlogs: arrayRemove(id) });
 
           setBlog((prevBlog) => ({
             ...prevBlog,
@@ -108,9 +102,7 @@ function BlogDetails() {
 
         // Add a like
         await updateDoc(blogDocRef, { likes: increment(1) });
-        await updateDoc(userDocRef, {
-          likedBlogs: arrayUnion(id),
-        });
+        await updateDoc(userDocRef, { likedBlogs: arrayUnion(id) });
 
         setBlog((prevBlog) => ({
           ...prevBlog,
@@ -132,31 +124,25 @@ function BlogDetails() {
 
       if (userDoc.exists()) {
         const userData = userDoc.data();
-
         const blogDocRef = doc(db, "blogs", id);
 
         // If the user already disliked the blog
         if (userData.dislikedBlogs?.includes(id)) {
           console.log("You have already disliked this blog.");
           await updateDoc(blogDocRef, { dislikes: increment(-1) });
-          await updateDoc(userDocRef, {
-            dislikedBlogs: arrayRemove(id), // Corrected to arrayRemove
-          });
+          await updateDoc(userDocRef, { dislikedBlogs: arrayRemove(id) });
 
           setBlog((prevBlog) => ({
             ...prevBlog,
             dislikes: Math.max((prevBlog.dislikes || 0) - 1, 0),
           }));
-
           return;
         }
 
         // If the user liked the blog, remove the like first
         if (userData.likedBlogs?.includes(id)) {
           await updateDoc(blogDocRef, { likes: increment(-1) });
-          await updateDoc(userDocRef, {
-            likedBlogs: arrayRemove(id), // Corrected to arrayRemove
-          });
+          await updateDoc(userDocRef, { likedBlogs: arrayRemove(id) });
 
           setBlog((prevBlog) => ({
             ...prevBlog,
@@ -166,9 +152,7 @@ function BlogDetails() {
 
         // Add a dislike
         await updateDoc(blogDocRef, { dislikes: increment(1) });
-        await updateDoc(userDocRef, {
-          dislikedBlogs: arrayUnion(id),
-        });
+        await updateDoc(userDocRef, { dislikedBlogs: arrayUnion(id) });
 
         setBlog((prevBlog) => ({
           ...prevBlog,
@@ -200,9 +184,18 @@ function BlogDetails() {
 
   return (
     <div className="blog-details-container">
+      {/* Using Helmet to set meta tags dynamically */}
+      <Helmet>
+        <title>{blog.title} | Flourless Haven</title>
+        <meta name="description" content={blog.excerpt || "Read this insightful blog on Flourless Haven."} />
+        <meta property="og:title" content={blog.title} />
+        <meta property="og:description" content={blog.excerpt || "Read this insightful blog on Flourless Haven."} />
+        <meta property="og:image" content={blog.image} />
+      </Helmet>
+
       <h1
         className="blog-details-title"
-        dangerouslySetInnerHTML={{ __html: blog.title }} // Render title as HTML
+        dangerouslySetInnerHTML={{ __html: blog.title }}
       />
 
       {blog.image && <img src={blog.image} alt={blog.title} className="blog-details-image" />}
@@ -213,7 +206,7 @@ function BlogDetails() {
         {blog.content && (
           <div
             dangerouslySetInnerHTML={{
-              __html: blog.content, // Assumes content is HTML
+              __html: blog.content,
             }}
           />
         )}

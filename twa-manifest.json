@@ -1,0 +1,46 @@
+{
+  "packageId": "org.flourlesshaven.twa",
+  "host": "flourlesshaven.org",
+  "name": "Flourless Haven",
+  "launcherName": "Flourless",
+  "display": "standalone",
+  "themeColor": "#E04D4D",
+  "themeColorDark": "#000000",
+  "navigationColor": "#000000",
+  "navigationColorDark": "#000000",
+  "navigationDividerColor": "#000000",
+  "navigationDividerColorDark": "#000000",
+  "backgroundColor": "#E04D4D",
+  "enableNotifications": true,
+  "startUrl": "/",
+  "iconUrl": "https://github.com/vinay-gulabani/celiac_community_website/blob/main/public/logo_gd2.png?raw=true",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "C:\\Users\\gulab\\Desktop\\VGG\\Coding-Projects\\celiac_community_website\\android.keystore",
+    "alias": "android"
+  },
+  "appVersionName": "5",
+  "appVersionCode": 5,
+  "shortcuts": [],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://flourlesshaven.org/manifest.json",
+  "fallbackType": "customtabs",
+  "features": {
+    "locationDelegation": {
+      "enabled": true
+    }
+  },
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "https://flourlesshaven.org/",
+  "minSdkVersion": 21,
+  "orientation": "portrait",
+  "fingerprints": [],
+  "additionalTrustedOrigins": [],
+  "retainedBundles": [],
+  "appVersion": "5"
+}

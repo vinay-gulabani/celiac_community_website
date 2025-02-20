@@ -93,7 +93,7 @@
 }
 
 .dark-mode .quote-box {
-  background-color: #ffe57b; /* Dark gray for a subtle contrast */
+  background-color: #FFDDD2; /* Dark gray for a subtle contrast */
   color: black; /* Light text color */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
 }

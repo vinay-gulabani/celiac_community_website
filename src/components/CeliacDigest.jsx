@@ -29,7 +29,7 @@ function CeliacDigest() {
     const fetchBlogs = async () => {
       try {
         const blogsCollection = collection(db, "blogs");
-        const blogsQuery = query(blogsCollection, orderBy("date", "desc"), limit(3));
+        const blogsQuery = query(blogsCollection, orderBy("date", "desc"), limit(4));
         const querySnapshot = await getDocs(blogsQuery);
 
         const blogsData = querySnapshot.docs.map((doc) => ({

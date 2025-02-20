@@ -112,6 +112,7 @@
   
   .dark-mode .digest-items {
     justify-content: center; /* No change needed unless specific styling required */
+    background-color: #1e1e1e;
   }
   
   .dark-mode .digest-item {

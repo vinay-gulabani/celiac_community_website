@@ -6,6 +6,7 @@ import "react-quill/dist/quill.snow.css";
 import { collection, getDocs, addDoc, Timestamp } from "firebase/firestore";
 import { auth, db } from "../firebase/firebaseConfig";
 import Footer from './Footer'; // Import the Footer component
+import { Helmet } from "react-helmet";
 
 
 import Header from "./Header"; // Import Header
@@ -26,7 +27,7 @@ function BlogPage() {
     author: "",
   });
 
-  const userId = "kgIHdWf8PJZVFl5X1IyAtq7TRAm2"; // Replace with your admin userId
+  const userId = "fNhjiwJK5TZ67lQLrdx9L83Icvi2"; // Replace with your admin userId
   const currentUser = auth.currentUser;
   const navigate = useNavigate();
 
@@ -98,6 +99,12 @@ function BlogPage() {
 
   return (
     <>
+
+    <Helmet>
+    <title>Celiac Digest | Gluten-Free Insights, Tips & Stories</title>
+<meta name="description" content="Explore Celiac Digest, your go-to source for gluten-free living, health tips, restaurant reviews, and personal stories from the celiac community." />
+
+          </Helmet>
       <Header />
       <div className="blog-page">
         <h1 className="blog-title">Celiac Digest</h1>
@@ -161,7 +168,7 @@ function BlogPage() {
         />
         
         <p className="blog-meta">
-          By {blog.author} on{" "}
+          {" "}
           {new Date(blog.date.seconds * 1000).toLocaleDateString()}
         </p>
         

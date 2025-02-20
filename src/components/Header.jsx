@@ -10,7 +10,9 @@ const Header = () => {
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const navigate = useNavigate();
 
-  const toggleNav = () => setIsNavOpen((prevState) => !prevState);
+  const toggleNav = () => {
+    setIsNavOpen((prevState) => !prevState);
+  };
 
   const toggleDarkMode = () => {
     document.body.classList.toggle("dark-mode");
